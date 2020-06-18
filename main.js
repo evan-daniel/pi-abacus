@@ -36,4 +36,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }); 
     }); 
+
+    document.addEventListener('touchmove', documentTouchmove => {
+        documentTouchmove.preventDefault(); 
+    });
 }); 
