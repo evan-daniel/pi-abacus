@@ -15,7 +15,7 @@
 }
 body {
     width: 100vw; 
-    height: 80vh; 
+    max-height: 80vh; 
     overflow: hidden; 
     
     font-family: Helvetica, sans-serif; 
