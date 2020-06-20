@@ -1,6 +1,8 @@
 /* global */
 :root {
     box-sizing: border-box; 
+
+    touch-action: none;
 }
 *, 
 ::before, 
