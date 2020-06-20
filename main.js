@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const beads = document.querySelectorAll('.beads > div'); 
     const bead_tops = []; 
     let count = 0; 
+    const h = document.querySelector('.bar__vertical').getBoundingClientRect().height; 
 
     beads.forEach((bead, beadIndex) => {
         let mousedown = false; 
@@ -26,7 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const lift = () => {
             let number = 0; 
-            const h = document.documentElement.clientHeight; 
             if(h * 0.07 < bead_tops[0]) number = 5; 
             if(bead_tops[1] < h * 0.37) number += 1; 
             if(bead_tops[2] < h * 0.51) number += 1; 
@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 else if(index < 4) bead_tops[index + 1] = Math.max(bead_tops[index] + bead_height, bead_tops[index + 1]); 
     
                 if(index === 0) bead_tops[index] = Math.max(0, Math.min(bead_height, bead_tops[index])); 
-                else bead_tops[index] = Math.max(window.innerHeight * 0.02 + bead_height * (index + 1), Math.min(window.innerHeight * 0.02 + bead_height * (index + 2), bead_tops[index])); 
+                else bead_tops[index] = Math.max(h * 0.02 + bead_height * (index + 1), Math.min(h * 0.02 + bead_height * (index + 2), bead_tops[index])); 
                 
                 beads[index].style.top = bead_tops[index] + 'px'; 
             }
