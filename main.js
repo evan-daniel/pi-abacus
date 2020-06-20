@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
             drag_start = beadTouchstart.targetTouches[0].clientY; 
             bead_start = bead_tops[beadIndex]; 
             console.log(beadTouchstart); 
-            document.querySelector('.count').innerHTML = beadTouchstart.which; 
+            document.querySelector('.count').innerHTML = beadTouchstart.detail; 
         }); 
         document.addEventListener('mouseup', () => mousedown = false); 
         document.addEventListener('touch', () => mousedown = false); 
@@ -45,6 +45,9 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }; 
         bead.addEventListener('mousemove', beadMousemove => move(beadMousemove.y)); 
-        bead.addEventListener('touchmove', beadTouchmove => move(beadTouchmove.targetTouches[0].clientY)); 
+        bead.addEventListener('touchmove', beadTouchmove => {
+            beadTouchmove.preventDefault(); 
+            move(beadTouchmove.targetTouches[0].clientY); 
+        }); 
     }); 
 }); 
