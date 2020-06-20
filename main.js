@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const lift = () => {
             let number = 0; 
-            const h = window.innerHeight; 
+            const h = document.documentElement.clientHeight; 
             if(h * 0.07 < bead_tops[0]) number = 5; 
             if(bead_tops[1] < h * 0.37) number += 1; 
             if(bead_tops[2] < h * 0.51) number += 1; 
