@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if(bead_tops[4] < h * 0.79) number += 1; 
 
             if(number.toString() === pi.charAt(count)) count++; 
-            document.querySelector('.count').innerHTML = count + '<br>' + bead_tops[3] + ' :: ' + h * 0.65 + '<br>' + bead_tops[4] + ' :: ' + h * 0.79; 
+            document.querySelector('.count').innerHTML = 'Number:: ' + count + '<br>' + bead_tops[3] + ' :: ' + h * 0.65 + '<br>' + bead_tops[4] + ' :: ' + h * 0.79 + '<br>' + document.documentElement.clientHeight + '<br>' + screen.height + '<br>' + window.innerHeight; 
         }; 
         document.addEventListener('mouseup', () => {
             mousedown = false; 
