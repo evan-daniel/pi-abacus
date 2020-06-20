@@ -31,14 +31,11 @@ body {
 /* count */
 .count {
     position: fixed; 
-    left: 0; 
-    width: 50vw; 
-    height: 33vw; 
-    padding: 2em; 
-
-    display: grid; 
-    justify-content: center;
-    align-items: center;
+    top: 37vh; 
+    left: 25px; 
+    z-index: 100; 
+    
+    font-size: 2rem; 
 }
 
 /* main */
