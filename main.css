@@ -10,6 +10,8 @@
     box-sizing: inherit; 
     margin: 0; 
     padding: 0; 
+
+    touch-action: inherit; 
 }
 body {
     width: 100vw; 
