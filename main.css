@@ -3,6 +3,8 @@
     box-sizing: border-box; 
 
     touch-action: none;
+
+    --vh: 1vh; 
 }
 *, 
 ::before, 
@@ -63,16 +65,12 @@ body {
 .abacus .beads {
     position: relative; 
     height: 100vh; 
-    
-    display: flex; 
-    flex-direction: column;
-    justify-content: flex-end;
 }
 .abacus .beads div {
     position: absolute; 
     left: -14vh; 
     width: 28vh; 
-    height: 14vh; 
+    height: calc(14 * var(--vh)); 
 
     background-image: url('data:image/svg+xml;utf-8,\
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1" preserveAspectRatio="none">\
