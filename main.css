@@ -30,8 +30,9 @@ body {
 .count {
     position: fixed; 
     left: 0; 
-    width: 25vw; 
-    height: 25vw; 
+    width: 33vw; 
+    height: 33vw; 
+    padding: 2em; 
 
     display: grid; 
     justify-content: center;
