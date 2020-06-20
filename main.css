@@ -26,6 +26,18 @@ body {
     align-items: center; 
 }
 
+/* count */
+.count {
+    position: fixed; 
+    left: 0; 
+    width: 25vw; 
+    height: 25vw; 
+
+    display: grid; 
+    justify-content: center;
+    align-items: center;
+}
+
 /* main */
 .abacus .bar__horizontal {
     position: absolute; 

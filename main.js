@@ -18,6 +18,8 @@ window.addEventListener('DOMContentLoaded', () => {
             mousedown = true; 
             drag_start = beadTouchstart.touches[0].clientY; 
             bead_start = bead_tops[beadIndex]; 
+            console.log(beadTouchstart.touches); 
+            document.querySelector('.count').innerHTML = beadTouchstart.touches.length; 
         }); 
         document.addEventListener('mouseup', () => mousedown = false); 
         document.addEventListener('touch', () => mousedown = false); 
