@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
         bead_tops[beadIndex] = bead.getBoundingClientRect().top; 
         let bead_start = bead_tops[beadIndex]; 
         const bead_height = bead.getBoundingClientRect().height; 
+        let touch_identifier = -1; 
     
         bead.addEventListener('mousedown', beadMousedown => {
             mousedown = true; 
@@ -16,10 +17,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }); 
         bead.addEventListener('touchstart', beadTouchstart => {
             mousedown = true; 
-            drag_start = beadTouchstart.touches[0].clientY; 
+            touch_identifier = beadTouchstart.which; 
+            drag_start = beadTouchstart.targetTouches[0].clientY; 
             bead_start = bead_tops[beadIndex]; 
-            console.log(beadTouchstart.touches); 
-            document.querySelector('.count').innerHTML = beadTouchstart.touches.length; 
+            console.log(beadTouchstart); 
+            document.querySelector('.count').innerHTML = beadTouchstart.which; 
         }); 
         document.addEventListener('mouseup', () => mousedown = false); 
         document.addEventListener('touch', () => mousedown = false); 
@@ -43,6 +45,6 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }; 
         bead.addEventListener('mousemove', beadMousemove => move(beadMousemove.y)); 
-        bead.addEventListener('touchmove', beadTouchmove => move(beadTouchmove.touches[0].clientY)); 
+        bead.addEventListener('touchmove', beadTouchmove => move(beadTouchmove.targetTouches[0].clientY)); 
     }); 
 }); 
