@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const beads = document.querySelectorAll('.beads > div'); 
     const bead_tops = []; 
-    let count = 0; 
+    let count = 1000; 
     const h = window.innerHeight; 
 
     beads.forEach((bead, beadIndex) => {
@@ -53,21 +53,16 @@ window.addEventListener('DOMContentLoaded', () => {
             if(!mousedown) return; 
             
             const delta = y - drag_start; 
-            bead_tops[beadIndex] = bead_start - drag_start + y; 
-    
+            bead_tops[beadIndex] = Math.min(Math.max(beadIndex * bead_height, bead_start - drag_start + y), (beadIndex + 1) * bead_height); 
             for(let i = 0; i < beads.length; i++) {
-                const index = delta < 0 ? beads.length - 1 - i : i; 
+                // const index = delta < 0 ? i : beads.length - 1 - i; 
+                const index = i; 
                 
-                if(i == 0) {
-                    bead_tops[index] = Math.min(Math.max(0, bead_tops[index]), h - bead_height); 
-                }
+                if(index !== 0) bead_tops[index] = Math.max(bead_tops[index-1]+bead_height, bead_tops[index]); 
+                if(delta < 0 && !isNaN(bead_tops[index+1])) {
+                    bead_tops[index] = Math.min(bead_tops[index], bead_tops[index+1]-bead_height); 
+                } 
 
-                if(delta < 0) {
-                    bead_tops[index - 1] = Math.min(bead_tops[index - 1], bead_tops[index] - bead_height); 
-                } else {
-                    bead_tops[index + 1] = Math.max(bead_tops[index] + bead_height, bead_tops[index + 1]); 
-                }
-                
                 beads[index].style.top = bead_tops[index] + 'px'; 
             }
         }; 
