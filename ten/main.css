@@ -1,0 +1,91 @@
+/* global */
+:root {
+    box-sizing: border-box; 
+
+    touch-action: none;
+
+    --vh: 1vh; 
+}
+*, 
+::before, 
+::after {
+    box-sizing: inherit; 
+    margin: 0; 
+    padding: 0; 
+
+    touch-action: inherit; 
+}
+body {
+    width: 100vw; 
+    max-height: calc(100 * var(--vh)); 
+    overflow: hidden; 
+    
+    font-family: Helvetica, sans-serif; 
+    background-color: #CCC; 
+
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* count */
+.count {
+    position: fixed; 
+    top: 37vh; 
+    left: 16.66vw; 
+    z-index: 100; 
+    
+    font-size: 2rem; 
+}
+.count:nth-of-type(2) {
+    left: 83.33vw; 
+}
+
+/* main */
+.abacus .bar__horizontal {
+    position: absolute; 
+    top: 28vh; 
+    right: 0; 
+    bottom: 70vh; 
+    left: 0; 
+    z-index: -1; 
+
+    background-color: #000; 
+}
+.abacus .bar__vertical {
+    position: absolute; 
+    top: 0; 
+    right: 47.5vw; 
+    bottom: 0; 
+    left: 47.5vw; 
+    z-index: -1; 
+
+    background-color: #000; 
+}
+.abacus .beads {
+    position: relative; 
+    height: 100vh; 
+}
+.abacus .beads div {
+    position: absolute; 
+    left: -14vh; 
+    width: 28vh; 
+    height: calc(10 * var(--vh)); 
+
+    background-image: url('data:image/svg+xml;utf-8,\
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1" preserveAspectRatio="none">\
+            <path stroke-width="0" fill="%230F0" d="M 0 0.5 L 0.5 0 L 1.5 0 L 2 0.5 L 1.5 1 L 0.5 1 Z" />\
+        </svg>'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+.abacus .beads div:nth-of-type(1) { top: calc(1 * 10 * var(--vh)); } 
+.abacus .beads div:nth-of-type(2) { top: calc(2 * 10 * var(--vh)); } 
+.abacus .beads div:nth-of-type(3) { top: calc(3 * 10 * var(--vh)); } 
+.abacus .beads div:nth-of-type(4) { top: calc(4 * 10 * var(--vh)); } 
+.abacus .beads div:nth-of-type(5) { top: calc(5 * 10 * var(--vh)); } 
+.abacus .beads div:nth-of-type(6) { top: calc(6 * 10 * var(--vh)); } 
+.abacus .beads div:nth-of-type(7) { top: calc(7 * 10 * var(--vh)); } 
+.abacus .beads div:nth-of-type(8) { top: calc(8 * 10 * var(--vh)); } 
+.abacus .beads div:nth-of-type(9) { top: calc(9 * 10 * var(--vh)); } 
