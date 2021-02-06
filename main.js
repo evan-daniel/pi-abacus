@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let count = 0; 
     const h = document.querySelector('.bar__vertical').getBoundingClientRect().height; 
 
-    let add = pi.charAt(count); 
+    let add = +pi.charAt(count); 
     beads.forEach((bead, beadIndex) => {
         let mousedown = false; 
         let drag_start = 0; 
