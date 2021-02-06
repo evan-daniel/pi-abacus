@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let count = 0; 
     const h = document.querySelector('.bar__vertical').getBoundingClientRect().height; 
 
+    let add = pi.charAt(count); 
     beads.forEach((bead, beadIndex) => {
         let mousedown = false; 
         let drag_start = 0; 
@@ -35,7 +36,9 @@ window.addEventListener('DOMContentLoaded', () => {
             if(bead_tops[3] < h * 0.65) number += 1; 
             if(bead_tops[4] < h * 0.79) number += 1; 
 
-            if(number.toString() === pi.charAt(count)) count++; 
+            if(number === add) {
+                add = (add + +pi.charAt(++count)) % 10; 
+            }
             document.querySelector('.count').innerHTML = count; 
         }; 
         document.addEventListener('mouseup', () => {
