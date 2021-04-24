@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const beads = document.querySelectorAll('.beads > div'); 
     const bead_tops = []; 
-    let count = 0; 
+    let count = 500; 
     const h = document.querySelector('.bar__vertical').getBoundingClientRect().height; 
 
     let add = +pi.charAt(count); 
