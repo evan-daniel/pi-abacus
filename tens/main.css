@@ -1,5 +1,4 @@
-/* GLOBAL */
-
+/* global */
 :root {
     box-sizing: border-box; 
 
@@ -7,7 +6,6 @@
 
     --vh: 1vh; 
 }
-
 *, 
 ::before, 
 ::after {
@@ -17,7 +15,6 @@
 
     touch-action: inherit; 
 }
-
 body {
     width: 100vw; 
     max-height: 100vh; 
@@ -31,9 +28,7 @@ body {
     align-items: center; 
 }
 
-/* UI */
-
-.entered, 
+/* count */
 .count {
     position: fixed; 
     top: 37vh; 
@@ -43,12 +38,17 @@ body {
     font-size: 2rem; 
 }
 
-.entered {
-    top: 50vh; 
+/* main */
+.abacus .bar__horizontal {
+    position: absolute; 
+    top: 28vh; 
+    right: 0; 
+    bottom: 70vh; 
+    left: 0; 
+    z-index: -1; 
+
+    background-color: #000; 
 }
-
-/* BAR */
-
 .abacus .bar__vertical {
     position: absolute; 
     top: 0; 
@@ -59,18 +59,15 @@ body {
 
     background-color: #000; 
 }
-
-/* BEADS */
-
 .abacus .beads {
     position: relative; 
     height: 100vh; 
 }
 .abacus .beads div {
     position: absolute; 
-    left: -10vh; 
-    width: 20vh; 
-    height: calc(10 * var(--vh)); 
+    left: -14vh; 
+    width: 28vh; 
+    height: calc(14 * var(--vh)); 
 
     background-image: url('data:image/svg+xml;utf-8,\
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1" preserveAspectRatio="none">\
@@ -80,12 +77,8 @@ body {
     background-repeat: no-repeat; 
     background-position: center; 
 }
-.abacus .beads div:nth-of-type(1) { top: calc(10 * var(--vh)); } 
-.abacus .beads div:nth-of-type(2) { top: calc(20 * var(--vh)); } 
-.abacus .beads div:nth-of-type(3) { top: calc(30 * var(--vh)); } 
-.abacus .beads div:nth-of-type(4) { top: calc(40 * var(--vh)); } 
-.abacus .beads div:nth-of-type(5) { top: calc(50 * var(--vh)); } 
-.abacus .beads div:nth-of-type(6) { top: calc(60 * var(--vh)); } 
-.abacus .beads div:nth-of-type(7) { top: calc(70 * var(--vh)); } 
-.abacus .beads div:nth-of-type(8) { top: calc(80 * var(--vh)); } 
-.abacus .beads div:nth-of-type(9) { top: calc(90 * var(--vh)); } 
+.abacus .beads div:nth-of-type(1) { top: 0; } 
+.abacus .beads div:nth-of-type(2) { top: 44vh; } 
+.abacus .beads div:nth-of-type(3) { top: 58vh; } 
+.abacus .beads div:nth-of-type(4) { top: 72vh; } 
+.abacus .beads div:nth-of-type(5) { top: 86vh; } 
