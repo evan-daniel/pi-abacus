@@ -1,6 +1,6 @@
 
 // ABACUS COLUMN
-export class abacus_column {
+class abacus_column {
     constructor(abacus_base, parent_element) {
         this.abacus_base = abacus_base; 
         this.parent_element = parent_element; 
