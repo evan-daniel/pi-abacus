@@ -1,7 +1,8 @@
 
 // ABACUS COLUMN
-class abacus_column {
-    constructor(abacus_base, parent_element) {
+// MY ANTIQUATED VERSION OF SAFARI REQUIRES OLD-STYLE OBJECT DECLARATIONS
+const abacus_column = function(abacus_base, parent_element) {
+    this.constructor = (abacus_base, parent_element) => {
         this.abacus_base = abacus_base; 
         this.parent_element = parent_element; 
         this.bead_height = window.innerHeight / abacus_base; 
@@ -24,17 +25,17 @@ class abacus_column {
             this.bead_tops[i] = i * this.bead_height + this.bead_height; 
             bead.style.top = `${this.bead_tops[i]}px`; 
         }
-    }
+    }; 
 
     // TRIGGERED BY COLUMN TOUCH-START
-    start_move = (moving_bead_index, drag_start) => {
+    this.start_move = (moving_bead_index, drag_start) => {
         this.moving_bead_index = moving_bead_index; 
         this.drag_start = drag_start; 
         this.bead_drag_start = this.bead_tops[moving_bead_index]; 
     }; 
     
     // AFTER TOUCH-START AND BEFORE TOUCH-END
-    move = drag_y => {
+    this.move = drag_y => {
         const delta = drag_y - this.drag_start; 
         this.bead_tops[this.moving_bead_index] = this.bead_drag_start + delta; 
         
@@ -78,7 +79,7 @@ class abacus_column {
     }; 
 
     // REPORT INPUT
-    report_input = () => {
+    this.report_input = () => {
         let input = 0; 
         this.bead_tops.forEach((bead_top, i) => {
             if(bead_top < i * this.bead_height + 0.5 * this.bead_height) {
@@ -87,6 +88,9 @@ class abacus_column {
         }); 
         return input; 
     }; 
+
+    // CALL
+    this.constructor(abacus_base, parent_element); 
 }; 
 
 // DRIVES ABACUS AND PI
