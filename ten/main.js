@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
     const bead_tops = []; 
     let count = 500; 
 
+    // EACH BEAD HAS ITS OWN EVENT LISTENERS
     let add = +pi.charAt(count); 
     beads.forEach((bead, bead_index) => {
         let mousedown = false; 
@@ -29,6 +30,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
             bead_start = bead_tops[bead_index]; 
         }); 
 
+        // SUBMIT WHEN FINGER LIFTED
         const lift = () => {
             let number = 0; 
             for(let i = 0; i < 10; i++) {
