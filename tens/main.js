@@ -89,13 +89,12 @@ class abacus_column {
     }; 
 }; 
 
-// DRIVES ABACUS AND π
+// DRIVES ABACUS AND PI
 window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
     
     // INIT
     let cursor = 0; 
     document.querySelector('#cursor').innerText = cursor; 
-    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`); 
 
     // ABACUS COLUMNS
     const columns = []; 
