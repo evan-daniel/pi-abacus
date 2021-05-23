@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
     document.documentElement.style.setProperty('--vh', `${h}px`); 
     const beads = document.querySelectorAll('.beads > div'); 
     const bead_tops = []; 
-    let count = 500; 
+    let count = 0; 
 
     // EACH BEAD HAS ITS OWN EVENT LISTENERS
     let add = +pi.charAt(count); 

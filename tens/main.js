@@ -1,6 +1,6 @@
 
 // ABACUS COLUMN
-// MY ANTIQUATED VERSION OF SAFARI REQUIRES OLD-STYLE OBJECT DECLARATIONS
+// MY ANTIQUATED VERSION OF SAFARI REQUIRES OLD-STYLE CLASS DECLARATIONS
 const abacus_column = function(abacus_base, parent_element) {
     this.constructor = (abacus_base, parent_element) => {
         this.abacus_base = abacus_base; 
