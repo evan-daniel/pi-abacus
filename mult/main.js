@@ -101,9 +101,10 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
     document.querySelector('#cursor').innerText = cursor; 
 
     // ABACUS COLUMNS
+    const ABACUS_BASE = 10; 
     const columns = []; 
     document.querySelectorAll('#abacus .column').forEach((column, i) => {
-        columns.push(new abacus_column(10, column)); 
+        columns.push(new abacus_column(ABACUS_BASE, column)); 
 
         // START OF INTERACTION
         column.addEventListener('touchstart', touchstart => {
@@ -132,6 +133,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
         }); 
         if(input === running_total) {
             running_total += +pi.charAt(cursor) * +pi.charAt(++cursor); 
+            running_total %= Math.pow(ABACUS_BASE, columns.length); 
         }
         document.querySelector('#cursor').innerText = cursor; 
         // document.querySelector('#entered').innerText = input; 
