@@ -24,7 +24,7 @@ const abacus_column = function(abacus_base, parent_element) {
 
             // PUSH BEADS
             this.beads.push(bead); 
-            this.bead_tops[i] = i * this.bead_height + this.bead_height; 
+            this.bead_tops[i] = i * this.bead_height; 
             bead.style.top = `${this.bead_tops[i]}px`; 
         }
     }; 
@@ -161,7 +161,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
             running_total += +pi.charAt(++cursor); 
         }
         document.querySelector('#cursor').innerText = cursor; 
-        document.querySelector('#entered').innerText = input; 
+        // document.querySelector('#entered').innerText = input; 
     }; 
     document.addEventListener('mouseup', lift); 
     document.addEventListener('touchend', touchend => {
