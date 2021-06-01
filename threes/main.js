@@ -151,13 +151,14 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
     }); 
 
     // LIFT TO SUBMIT INPUT
+    let running_total = +pi.charAt(cursor); 
     const lift = () => {
         let input = 0; 
         columns.forEach((column, i) => {
             input += column.report_input() * Math.pow(10, columns.length - 1 - i); 
         }); 
-        if(input === +pi.charAt(cursor)) {
-            ++cursor;  
+        if(input === running_total) {
+            running_total += +pi.charAt(++cursor); 
         }
         document.querySelector('#cursor').innerText = cursor; 
         // document.querySelector('#entered').innerText = input; 
