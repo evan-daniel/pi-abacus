@@ -16,6 +16,7 @@ body {
     height: 100vh; 
     
     font-family: 'Futura'; 
+    font-weight: 600; 
 }
 
 /* PIANO CONTAINER */
@@ -54,4 +55,14 @@ body {
     margin-top: calc(-1 * 100vh / 28); 
 
     background-color: #000; 
+}
+
+/* PI CURSOR */
+
+.pi-cursor {
+    position: fixed; 
+    left: 15px; 
+    top: 40vh; 
+
+    font-size: 4rem; 
 }

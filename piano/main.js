@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
             }], {
                 duration: 500, 
             }); 
+            document.querySelector('.pi-cursor').innerText = pi_cursor; 
         }
     }); 
 }); 
