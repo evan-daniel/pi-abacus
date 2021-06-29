@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
             // }], {
             //     duration: 500, 
             // }); 
+            touchstart.target.getAttribute('value') === pi_digits[pi_cursor] && ++pi_cursor
             document.querySelector('.pi-cursor').innerText = pi_cursor; 
         }
     }); 
