@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
             // }); 
 
             // LEGACY SUPPORT VERSION
+            // ALSO REQUIRES A BUNCH OF ANIMATION DEFINITION IN CSS
             let pi_entry_was_correct = false; 
             if(touchstart.target.getAttribute('value') === pi_digits[pi_cursor]) {
                 ++pi_cursor; 
