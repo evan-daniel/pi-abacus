@@ -14,13 +14,13 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
 
     document.querySelector('.piano-container').addEventListener('touchstart', touchstart => {
         if(touchstart.target.classList.contains('key')) {
-            touchstart.target.animate([{
-                backgroundColor: touchstart.target.getAttribute('value') === pi_digits[pi_cursor] && ++pi_cursor ? '#00F' : '#F00', 
-            }, {
-                backgroundColor: touchstart.target.classList.contains('white') ? '#FFF' : '#000', 
-            }], {
-                duration: 500, 
-            }); 
+            // touchstart.target.animate([{
+            //     backgroundColor: touchstart.target.getAttribute('value') === pi_digits[pi_cursor] && ++pi_cursor ? '#00F' : '#F00', 
+            // }, {
+            //     backgroundColor: touchstart.target.classList.contains('white') ? '#FFF' : '#000', 
+            // }], {
+            //     duration: 500, 
+            // }); 
             document.querySelector('.pi-cursor').innerText = pi_cursor; 
         }
     }); 
