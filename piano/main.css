@@ -36,6 +36,8 @@ body {
 
 .key {
     border: 1px solid #000; 
+
+    transition: background-color 200ms; 
 }
 
 .white {
@@ -59,54 +61,12 @@ body {
     background-color: #000; 
 }
 
-/* CORRECTNESS FEEDBACK */
-
-@keyframes correct-pi-entry-white {
-    0% {
-        background-color: #00F; 
-    }
-
-    100% {
-        background-color: #FFF; 
-    }
-}
-
-@keyframes mistake-pi-entry-white {
-    0% {
-        background-color: #F00; 
-    }
-
-    100% {
-        background-color: #FFF; 
-    }
-}
-
-@keyframes correct-pi-entry-black {
-    0% {
-        background-color: #00F; 
-    }
-
-    100% {
-        background-color: #000; 
-    }
-}
-
-@keyframes mistake-pi-entry-black {
-    0% {
-        background-color: #F00; 
-    }
-
-    100% {
-        background-color: #000; 
-    }
-}
-
 /* PI CURSOR */
 
 .pi-cursor {
     position: fixed; 
-    left: 15px; 
-    top: 40vh; 
+    left: 1rem; 
+    top: calc(50% - 1rem); 
 
-    font-size: 4rem; 
+    font-size: 2rem; 
 }

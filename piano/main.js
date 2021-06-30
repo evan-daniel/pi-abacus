@@ -27,17 +27,16 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
             // }); 
 
             // LEGACY SUPPORT VERSION
-            // ALSO REQUIRES A BUNCH OF ANIMATION DEFINITION IN CSS
-            let pi_entry_was_correct = false; 
-            if(touchstart.target.getAttribute('value') === pi_digits[pi_cursor]) {
-                ++pi_cursor; 
-                pi_entry_was_correct = true; 
-            }
-            touchstart.target.style.animation = ''; 
-            touchstart.target.offsetHeight; 
-            touchstart.target.style.animation = `${touchstart.target.classList.contains('white') ? pi_entry_was_correct ? 'correct-pi-entry-white' : 'mistake-pi-entry-white' : pi_entry_was_correct ? 'correct-pi-entry-black' : 'mistake-pi-entry-black'} 500ms`; 
+            touchstart.target.style.backgroundColor = touchstart.target.getAttribute('value') === pi_digits[pi_cursor] && ++pi_cursor ? '#00F' : '#F00'; 
 
             document.querySelector('.pi-cursor').innerText = pi_cursor; 
+        }
+    }); 
+
+    document.querySelector('.piano-container').addEventListener('touchend', touchend => {
+        console.log('TOUCHEND', touchend); 
+        if(touchend.target.classList.contains('key')) {
+            touchend.target.style.backgroundColor = touchend.target.classList.contains('white') ? '#FFF' : '#000'; 
         }
     }); 
 }); 
