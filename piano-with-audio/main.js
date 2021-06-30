@@ -15,7 +15,7 @@ function note(pitch, velocity) {
         this.panner.connect(audio_context.destination); 
         
         this.gain.connect(this.panner); 
-        this.gain.gain.setValueAtTime(0.75, audio_context.currentTime); 
+        this.gain.gain.setValueAtTime(0.9, audio_context.currentTime); 
         
         this.oscillator = audio_context.createOscillator(); 
         this.oscillator.type = "square"; 
@@ -23,8 +23,6 @@ function note(pitch, velocity) {
         this.oscillator.frequency.value = this.pitch * 16 + 256; 
         this.oscillator.connect(this.gain); 
         this.oscillator.start(0); 
-
-        console.log('NOTE STARTED'); 
     }
 
     this.turn_off = () => {
@@ -32,14 +30,12 @@ function note(pitch, velocity) {
         this.gain.gain.setTargetAtTime(this.velocity, audio_context.currentTime + 0.05, 0.05); 
         this.oscillator.stop(audio_context.currentTime + 0.1); 
         notes.splice(notes.findIndex(_note => _note === this), 1); 
-
-        console.log('NOTE STOPPED'); 
     }
 
     this.constructor(pitch, velocity); 
 }
 
-window.addEventListener('DOMContentLoaded', async DOMContentLoaded => {
+window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
 
     for(let i = 0; i < 12; i++) {
         const pianoKey = document.createElement('div'); 
@@ -49,15 +45,13 @@ window.addEventListener('DOMContentLoaded', async DOMContentLoaded => {
         document.querySelector('.piano-container').prepend(pianoKey); 
     }
 
-    const gesture = () => new Promise((resolve, reject) => document.addEventListener('click', () => resolve())); 
-    await gesture(); 
     audio_context = new AudioContext(); 
     console.log('MIDI STARTED'); 
     let pi_cursor = 0; 
     document.querySelector('.piano-container').addEventListener('touchstart', touchstart => {
         if(touchstart.target.classList.contains('key')) {
             touchstart.target.style.backgroundColor = touchstart.target.getAttribute('value') === pi_digits[pi_cursor] && ++pi_cursor ? '#00F' : '#F00'; 
-            notes.push(new note(+touchstart.target.getAttribute('value'), 127)); 
+            notes.push(new note(+touchstart.target.getAttribute('value'), 0.9)); 
 
             document.querySelector('.pi-cursor').innerText = pi_cursor; 
         }
