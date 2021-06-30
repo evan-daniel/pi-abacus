@@ -1,0 +1,74 @@
+/* GLOBAL */
+
+:root {
+    box-sizing: border-box; 
+
+    touch-action: none;
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: inherit; 
+    margin: 0; 
+    padding: 0; 
+
+    touch-action: none; 
+}
+
+body {
+    height: 100vh; 
+    
+    font-family: 'Futura'; 
+    font-weight: 600; 
+}
+
+/* PIANO CONTAINER */
+
+.piano-container {
+    position: fixed; 
+    width: 50%; 
+    height: 100%; 
+    right: 0; 
+
+    background-color: #00F; 
+}
+
+/* KEYS */
+
+.key {
+    border: 1px solid #000; 
+
+    transition: background-color 200ms; 
+}
+
+.white {
+    width: 100%; 
+    height: calc(100% / 7); 
+    
+    background-color: #FFF; 
+}
+
+.black + .white {
+    margin-top: calc(-1 * 100vh / 28); 
+}
+
+.black {
+    z-index: 10; 
+    position: relative;
+    width: 66%; 
+    height: calc(100% / 14); 
+    margin-top: calc(-1 * 100vh / 28); 
+
+    background-color: #000; 
+}
+
+/* PI CURSOR */
+
+.pi-cursor {
+    position: fixed; 
+    left: 1rem; 
+    top: calc(50% - 1rem); 
+
+    font-size: 2rem; 
+}
