@@ -11,7 +11,7 @@ function note(pitch, velocity) {
         this.gain = audio_context.createGain(); 
 
         this.panner = audio_context.createStereoPanner(); 
-        this.panner.pan.setValueAtTime(1, audio_context.currentTime);
+        this.panner.pan.setValueAtTime(0.5, audio_context.currentTime);
         this.panner.connect(audio_context.destination); 
         
         this.gain.connect(this.panner); 
@@ -20,7 +20,7 @@ function note(pitch, velocity) {
         this.oscillator = audio_context.createOscillator(); 
         this.oscillator.type = "square"; 
         // this.oscillator.frequency.value = 440 / 32 * (2 ** ((this.pitch - 9) / 12));
-        this.oscillator.frequency.value = this.pitch * 16 + 256; 
+        this.oscillator.frequency.value = 440; 
         this.oscillator.connect(this.gain); 
         this.oscillator.start(0); 
     }
@@ -35,7 +35,7 @@ function note(pitch, velocity) {
     this.constructor(pitch, velocity); 
 }
 
-window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
+window.addEventListener('DOMContentLoaded', async DOMContentLoaded => {
 
     for(let i = 0; i < 12; i++) {
         const pianoKey = document.createElement('div'); 
@@ -45,13 +45,16 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
         document.querySelector('.piano-container').prepend(pianoKey); 
     }
 
+    const gesture = () => new Promise((resolve, reject) => document.addEventListener('click', () => resolve())); 
+    await gesture(); 
     audio_context = new AudioContext(); 
     console.log('MIDI STARTED'); 
     let pi_cursor = 0; 
+    notes.push(new note(440, 0.9)); 
     document.querySelector('.piano-container').addEventListener('touchstart', touchstart => {
         if(touchstart.target.classList.contains('key')) {
             touchstart.target.style.backgroundColor = touchstart.target.getAttribute('value') === pi_digits[pi_cursor] && ++pi_cursor ? '#00F' : '#F00'; 
-            notes.push(new note(+touchstart.target.getAttribute('value'), 0.9)); 
+            notes.push(new note(440, 0.9)); 
 
             document.querySelector('.pi-cursor').innerText = pi_cursor; 
         }
