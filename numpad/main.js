@@ -2,6 +2,8 @@ import { pi as pi_digits } from '../pi_digits.js';
 
 window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
     
+    document.querySelector('#numpad-container').style.height = `${window.innerHeight}px`; 
+    
     let pi_cursor_left = 0, pi_cursor_right = 0; 
     const set_pi_cursors = side => {
         let feedback = document.querySelector(`#feedback-${side}`); 
