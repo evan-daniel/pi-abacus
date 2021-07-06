@@ -1,0 +1,69 @@
+/* GLOBAL */
+
+:root {
+    box-sizing: border-box; 
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: inherit; 
+    margin: 0; 
+    padding: 0; 
+
+    touch-action: none; 
+}
+
+body {
+    height: 100vh; 
+
+    font-size: 1.5rem; 
+    line-height: 0; 
+    font-family: 'Futura', sans-serif; 
+    font-weight: 700; 
+    color: #FFF; 
+}
+
+/* NUMPAD */
+
+#numpad-container {
+    height: 100%; 
+    width: 100%; 
+
+    display: flex; 
+    flex-direction: column; 
+}
+
+.numpad {
+    height: 100%; 
+    width: 100%; 
+
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap; 
+}
+
+#numpad-right {
+    border-top: 1px solid #000; 
+}
+
+/* NUMPAD CHILDREN */
+
+.numpad-button, 
+.numpad-num {
+    flex: 0 0 33.333%; 
+
+    background-color: #888; 
+    border: 5px solid #FFF; 
+
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* FEEDBACK */
+
+.feedback {
+    position: absolute; 
+    transform: rotate(90deg); 
+}
