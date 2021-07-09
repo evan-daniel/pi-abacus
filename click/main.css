@@ -1,0 +1,48 @@
+/* GLOBAL */
+
+:root {
+    box-sizing: border-box; 
+    touch-action: none; 
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: inherit; 
+    margin: 0; 
+    padding: 0; 
+    touch-action: inherit; 
+}
+
+body {
+    font-family: 'Futura', sans-serif; 
+    font-weight: 700; 
+}
+
+/* CLICK */
+
+.click-container {
+    position: fixed; 
+    height: 100%; 
+    width: 100%; 
+
+    background-color: #00F; 
+}
+
+.click {
+    height: 10%; 
+    width: 100%; 
+
+    background-color: #FFF; 
+    border: 2px solid #000; 
+}
+
+/* FEEDBACK */
+
+.pi-feedback {
+    position: fixed; 
+    height: 1.2em; 
+    width: 33%; 
+    top: 0; 
+    left: 33%; 
+}
