@@ -19,7 +19,10 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
     }; 
     
     context.canvas.addEventListener('touchstart', touchstart => handleLocationChange(touchstart.touches[0].clientX, touchstart.touches[0].clientY)); 
-    context.canvas.addEventListener('touchmove', touchmove => handleLocationChange(touchmove.touches[0].clientX, touchmove.touches[0].clientY)); 
+    context.canvas.addEventListener('touchmove', touchmove => {
+        touchmove.preventDefault(); 
+        handleLocationChange(touchmove.touches[0].clientX, touchmove.touches[0].clientY); 
+    }); 
 
     context.canvas.addEventListener('touchend', touchend => {
         let angle = -Math.atan2(touch_y - context.canvas.height / 2, touch_x - context.canvas.width / 2) / Math.PI / 2; 
