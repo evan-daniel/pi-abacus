@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded', DOMContentLoaded => {
 
     context.canvas.addEventListener('touchend', touchend => {
         let angle = -Math.atan2(touch_y - context.canvas.height / 2, touch_x - context.canvas.width / 2) / Math.PI / 2; 
+        angle = (angle + 0.05) % 1; 
         if(angle < 0) {
             angle += 1; 
         }
