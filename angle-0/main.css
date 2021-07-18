@@ -1,0 +1,43 @@
+/* GLOBAL */
+
+:root {
+    box-sizing: border-box; 
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: inherit; 
+    margin: 0; 
+    padding: 0; 
+    touch-action: none; 
+}
+
+body {
+    position: fixed; 
+    height: 100%; 
+    width: 100%; 
+}
+
+/* CANVAS */
+
+canvas {
+    height: 100%; 
+    width: 100%; 
+    
+    background-color: #FFF; 
+}
+
+/* FEEDBACK */
+
+.pi-feedback {
+    position: fixed; 
+    top: 0; 
+    height: 1.2em; 
+    width: 100%; 
+
+    font-size: 2rem; 
+    font-family: 'Futura', sans-serif; 
+    font-weight: 700; 
+    text-align: center; 
+}
